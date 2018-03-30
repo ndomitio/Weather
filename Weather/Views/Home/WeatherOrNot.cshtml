@@ -1,0 +1,60 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Weather Or Not";
+}
+
+<h2>WeatherJS</h2>
+<div class="col-md-12">
+
+    <h1>Current Conditions In <span data-bind="text:name"></span></h1>
+</div>
+<div class="col-md-12" style="margin-bottom:20px;">
+
+    Temp<span data-bind="text:main.temp"></span>&deg; F
+
+</div>
+
+<button>Get Weather</button>
+
+<button>Get Forecast</button>
+
+
+<div id="googleMap" style="width:100%;height:400px"></div>
+
+
+
+
+<script>
+    var weather = Object();
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("@Url.Action("GetWeather", "Home")", function (response) {
+                //response parameter contains what is returned in the method you call in the quotes
+                //response
+                //console.log(response);
+                weather = ko.mapping.fromJS(response); //populate the weather object
+                ko.applyBindings(weather);
+            });
+        });
+    });
+
+    @*var forecast = Object();
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("@Url.Action("GetForecast", "Home")", function (response2) {
+                //response parameter contains what is returned in the method you call in the quotes
+                //response
+                //console.log(response);
+                forecast = ko.mapping.fromJS(response2); //populate the weather object
+                ko.applyBindings(forecast);
+            });
+        });
+    });*@
+
+
+
+
+
+</script>
