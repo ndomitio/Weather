@@ -23,6 +23,11 @@ namespace Weather.Controllers
             return View();
         }
 
+        public ActionResult PinnedMap()
+        {
+            return View();
+        }
+
         public JsonResult GetWeather()
         {
             WeatherClass weath = new WeatherClass ();

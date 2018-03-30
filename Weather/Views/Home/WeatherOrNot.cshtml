@@ -151,32 +151,9 @@
             });
         });
     });*@
-
+    
 </script>
 
-
-<script>
-    function myMapPinned() {
-        var mapCanvas = document.getElementById("mapPinned");
-        var myCenter = new google.maps.LatLng(51.508742, -0.120850);
-        var mapOptions = { center: myCenter, zoom: 5 };
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-        google.maps.event.addListener(map, 'click', function (event) {
-            placeMarker(map, event.latLng);
-        });
-    }
-
-    function placeMarker(map, location) {
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-        var infowindow = new google.maps.InfoWindow({
-            content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
-        });
-        infowindow.open(map, marker);
-    }
-</script>
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-_RBwlKGxsofVM-O3QeIIPiPDfVjcVO4
@@ -190,4 +167,3 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-_RBwlKGxsofVM-O3QeIIPiPDfVjcVO4&callback=myMapPin"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-_RBwlKGxsofVM-O3QeIIPiPDfVjcVO4&callback=myMapPinned"></script>
