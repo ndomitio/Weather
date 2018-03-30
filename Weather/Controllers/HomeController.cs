@@ -27,6 +27,10 @@ namespace Weather.Controllers
         {
             return View();
         }
+        public ActionResult GoogleSearchAPI()
+        {
+            return View();
+        }
 
         public JsonResult GetWeather()
         {
